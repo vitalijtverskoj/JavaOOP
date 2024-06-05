@@ -1,10 +1,10 @@
-import java.util.List;
+// import java.util.List;
 
 interface VendingMachine {
     
-    void initProducts(List<Product> productList);
+    // void initProducts(List<Product> productList);
     
-    void addProduct(Product product);
+    // void addProduct(Product product);
     
     Product getProduct(String name);
 }
