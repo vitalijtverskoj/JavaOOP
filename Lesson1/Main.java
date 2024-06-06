@@ -4,16 +4,22 @@
 public class Main {
 
     public static void main(String[] args) {
-        // Product product = new Product("1", 100);
-        // Product product1 = new Product("2", 200);
-        // Product product2 = new Product("3", 300);
+        HotDrink product = new HotDrink("Coffee", 150, 400, 70);
+        HotDrink product1 = new HotDrink("Tea", 50, 500, 90);
+        HotDrink product2 = new HotDrink("Chocolate", 100, 300, 60);
+        
+        HotDrinkVendingMachine vMachine = new HotDrinkVendingMachine();
+        vMachine.addHotDrink(product);
+        vMachine.addHotDrink(product1);
+        vMachine.addHotDrink(product2);
 
-        // VendingMachine vMachine = new VendingMachine();
-        // vMachine.addProduct(product);
-        // vMachine.addProduct(product1);
-        // vMachine.addProduct(product2);
+        System.out.println(vMachine.getProduct("Coffee"));
+        System.out.println(vMachine.getProduct("Tea").getCost());
+        System.out.println(vMachine.getProduct("Chocolate").getVolume());
 
-        // System.out.println(vMachine.getProduct("4"));
+        System.out.println(product2);
+        vMachine.getProduct("Chocolate").setTemper(70);
+        System.out.println(product2);
 
     }
 }

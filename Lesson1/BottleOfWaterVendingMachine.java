@@ -4,32 +4,22 @@ import java.util.List;
 public class BottleOfWaterVendingMachine implements VendingMachine{
     private List<BottleOfWater> productList;
 
-    public List<BottleOfWater> getProductList() {
-        return productList;
-    }    
-    
-    public BottleOfWaterVendingMachine(List<BottleOfWater> productList) {
-        this.productList = productList;
+    public BottleOfWaterVendingMachine() {
+        productList = new ArrayList<>();
     }
 
     public void setProductList(List<BottleOfWater> productList) {
-        this.productList = new ArrayList<>(productList);
+        this.productList = productList;
     }
 
-    public void addBottleOfWater(BottleOfWater bottleofWater){
-        this.productList.add(bottleofWater);
+    public List<BottleOfWater> getProductList() {
+        return productList;
     }
-    
-    // @Override
-    // public void addProduct(Product product){
-    //     productList.add(product);
-    // }
-    
-    // @Override
-    // public void initProducts(List<Product> productList){
-    //     this.productList = productList; 
-    // }
-    
+
+    public void addBottleOfWater(BottleOfWater bottleOfWater){
+        this.productList.add(bottleOfWater);
+    }
+     
     @Override
     public Product getProduct(String name){
         for (Product product : productList) {
@@ -39,9 +29,9 @@ public class BottleOfWaterVendingMachine implements VendingMachine{
         return null;
     }
 
-    public Product getProduct(String name, double value) {
+    public Product getProduct(String name, double volume) {
         for (Product product : productList) {
-            if(product.getName().equals(name) && ((BottleOfWater)product).getVolume() == value)
+            if(product.getName().equals(name) && ((BottleOfWater)product).getVolume() == volume)
                 return product;
         }
         return null;
